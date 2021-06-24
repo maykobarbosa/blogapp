@@ -1,0 +1,72 @@
+yarn init -y  ///criar projeto
+
+yarn add typescript -D  /// iinstalação typescript
+
+yarn tsc --init  /// iniciar o typescript
+
+# mudar em tsconfig.json   ("strict": false,  )
+
+yarn tsc /// converter typescript para javascript
+
+yarn add express  /// instalar o express
+
+yarn add @types/express ///biblioteca de tipagens do express
+
+yarn add ts-node-dev -D /// biblioteca para converter o typescript para o node entender
+
+yarn add typeorm reflect-metadata sqlite3
+
+yarn typeorm migration:create -n CreateUsers
+
+yarn typeorm migration:run
+
+yarn typeorm entity:create -n User
+
+yarn add uuid
+
+yarn add @types/uuid -D
+
+yarn add express-async-errors  // biblioteca para erros async
+
+yarn add jsonwebtoken  ///autenticação wjt 
+
+yarn add @types/jsonwebtoken -D  //tipagens
+
+yarn add bcryptjs // criptografia
+
+yarn add @types/bcryptjs -D //tipagens
+
+//@types/express
+const app = express();
+
+/**
+ * GET    =>  buscar um informação
+ * POST   =>  inserir (criar) um informação
+ * PUT    =>  alterar uma informação
+ * DELETE =>  remover um dado  
+ * PATCH  =>  alterar um informação específica
+ */
+
+/**
+ * tipos de parametros
+ * Routes Params => http://localhost:3000/produtos/3456745756
+ * Query Params => http://localhost:3000/produtos?name=teclado&description=tecladobom
+ * 
+ * Body Params => {
+ *      "name": "teclado",
+ *      "description": "teclado bom "
+ * }
+ */
+
+app.get("/test", (req ,res) => {
+    // req ou request  => entrando
+    // res ou response => saindo
+    return res.send("Olá NLW!")
+})
+
+app.post("/test-post", (req, res) => {
+    return res.send("Olá NLW metodo POST")
+})
+
+//http://localhost:3000
+app.listen(3000, () => console.log("Servidor rodando nlw!"));
